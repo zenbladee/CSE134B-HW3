@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Experiments | Sophia Hernandez</title>
+    <link rel="author" href="about.html">
+
+    <style>
+        header, nav, main, section, article, footer {
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Sophia Hernandez</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="software.html">Software Projects</a></li>
+                <li><a href="hardware.html">Hardware Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="experiments.html">Experiments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Experiments</h2>
+
+        <p>
+            This page is for homework experiments.
+        </p>
+
+        <section>
+            <h3>Template</h3>
+            <p>
+                A <em>template</em> element is a layout that holds HTML content.
+            </p>
+            <template id="paragraph-template">
+                <h4>Template Title</h4>
+                <p>This is a paragraph inside the template.</p>
+            </template>
+        </section>
+
+        <section>
+            <h3>audio</h3>
+            <p>The <em>audio</em> element is used to inject sound into the website.</p>
+            <audio controls>
+                <source src="audio/sample-audio.mp3" type="audio/mpeg">
+            </audio>
+        </section>
+
+        <section>
+            <h3>video</h3>
+            <p>The <em>video</em> element is used to embed videos into the website.</p>
+            <video controls width="320" height="240">
+                <source src="video/sample-video.mp4" type="video/mp4">
+            </video>
+        </section>
+
+        <section>
+            <h3>canvas</h3>
+            <p>The <em>canvas</em> element is used to create graphics.</p>
+            <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+            </canvas>
+        </section>
+
+        <section>
+            <h3>svg</h3>
+            <div>
+                <p>
+                    The <em>svg</em> element is used for displaying 2D graphics on websites.
+                </p>
+                <svg width="100" height="100">
+                    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+                </svg>
+            </div>
+        </section>
+
+        <section>
+            <h3>iframe</h3>
+            <p>The <em>iframe</em> element is used to embed another HTML page within the current page.</p>
+            <iframe src="about.html" width="320" height="240"></iframe>
+        </section>
+
+        <section>
+            <h3>Custom Element</h3>
+            <p> 
+                The custom element prints a message to the browser console.
+            </p>
+            <ol>
+                <li>Open DevTools (<span>F12</span>)</li>
+                <li>Click on the Console tab</li>
+                <li>Look for the Hello, World! message</li>
+            </ol>
+            <hello-world></hello-world>
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy; 2026 Sophia Hernandez <br> UC San Diego</p>
+        <p><a href="contact.html">Contact Me</a></p>
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        ctx.strokeStyle ="black";
+        ctx.strokeRect(10, 10, 90, 40);
+        ctx.beginPath();
+        ctx.arc(50, 50, 30, 0, 2 * Math.PI);
+        ctx.stroke();
+    </script>
+
+    <script>
+        class HelloWorld extends HTMLElement {
+            connectedCallback() {
+                console.log('Hello World!');
+            }
+        }
+
+        customElements.define('hello-world', HelloWorld);
+    </script>
+</body>
+</html>
