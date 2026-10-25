@@ -1,18 +1,91 @@
-/* Typography and Inheritance Section */
+/* Sophia Hernandez - https://github.com/zenbladee/CSE134B-HW3 */
+
 body {
-    font-family:'Gill Sans', 'Gill Sans MT', sans-serif;
+    /* Typography and Inheritance Section */
+    font-family: "Times New Roman", Times, serif;
     color: black;
-    line-height: 1.5;
-    /* Creamy Yellow - Matches my cheese site theme */
-    background-color: rgb(255, 255, 142);
+    line-height: 1.6;
+
+    /* Layout and Box Model */
+    max-width: 1000px;
+    margin: 0 auto; /* 0's at the top and bottom and centers page */
+    padding: 10px;
+
+    background-color: rgb(255, 255, 182);
 }
 
-/*Headings*/
+/* Basic Selectors */
 
-h1 .latin {
-    font: italic;
+h1 {
+    font-size: 2rem;
 }
 
-h2 .latin {
-    font: italic;
+h2 {
+    font-size: 1.5rem; /* Smaller than h1 - 24px */
 }
+
+/* Italicizes both Latin Terms */
+.latin {
+    font-style: italic;
+}
+
+/* Gives a distinct background color (yellow orange for warning) */
+#warning {
+    background-color: rgb(255, 191, 16);
+}
+
+/* Layout and Box Model */
+blockquote {
+    /* Visible border: */
+    border: 3px;
+    border-style: solid; /* Lines are solid */
+    border-radius: 20px; /* Rounded corners */
+    border-color: black;
+
+    /* Margin Outside the Border */
+    margin: 1rem 0;
+    padding: 10px;
+}
+
+/* Hover and Focus */
+
+/* Links */
+a:hover {
+    background-color: rgb(255, 208, 79);
+    outline: 3px black;
+    outline-style: solid;
+}
+
+a:focus {
+    background-color: rgb(255, 164, 79);
+    outline: 3px black;
+    outline-style: solid;
+}
+
+/* Inputs */
+input:focus {
+    background-color: rgb(255, 164, 79);
+    outline: 3px black;
+    outline-style: solid;
+}
+
+/* Buttons */
+button:focus {
+    background-color: rgb(255, 164, 79);
+    outline: 3px black;
+    outline-style: solid;
+}
+
+/* Cascade in Action */
+q {
+    color: white;
+}
+
+/* Both selectors are q so when they tie because they have the same amount 
+    of specificity the selector that comes last overrides the other.
+    This means that anything in 'q' will have the color black instead of white */
+q {
+    color: black;
+}
+
+/* Graceful Degradation - Tests were very successful */
