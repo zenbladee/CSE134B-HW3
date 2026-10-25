@@ -1,8 +1,13 @@
+/* Typography and Inheritance Section */
 body {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', sans-serif;
     color: black;
-    line-height: 20px;
+    line-height: 1.5;
+    /* Creamy Yellow - Matches my cheese site theme */
+    background-color: rgb(255, 255, 142);
 }
+
+/*Headings*/
 
 h1 .latin {
     font: italic;
