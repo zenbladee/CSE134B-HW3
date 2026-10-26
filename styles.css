@@ -10,7 +10,7 @@
 
     /* Font Stack */
     --font-all: "Times New Roman", Times, serif;
-    --font18: 18px;
+    --font18: 1.125rem;
 
     /* Layout Value */
     --max-width: 1500px;
@@ -32,17 +32,36 @@ body {
     padding: var(--padding);
 }
 
-/* Navigation */
+/* Headers  */
 h1 {
     color: var(--color-text);
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
+
+h2 {
+    color: var(--color-text);
+    font-size: 1.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    color: var(--color-text);
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+/* Navigation */
 
 nav {
     background-color: var(--color-blocks);
-    border-radius: var(--padding);
+    border-radius: var(--border-rad);
 }
 
-nav ul {
+/* Selectors in Context */
+nav > ul { /* This is a child combinator which targets the ul tag and it is a child of nav*/
     list-style: none;
     margin: 0;
     padding: var(--padding); /* Padding to the left and right*/
@@ -69,7 +88,7 @@ nav li a {
     font-weight: bold;
 
     margin: 0;
-    padding: 10px 50px;
+    padding: 0.6em 2em;
     
     display: flex;
     justify-content: center;
@@ -83,7 +102,6 @@ footer {
 footer p {
     font-size: var(--font18);
     color: var(--color-text);
-    text-decoration-line: none;
     font-weight: bold;
 
     text-align: center;
@@ -98,12 +116,69 @@ footer a {
 }
 
 @media (max-width: 600px) {
-    nav ul {
+    nav > ul {
         flex-direction: column;
     }
 }
 
+/* Selectors in Context */
+label + progress { /* Label + progress: they are adjacent siblings that selects progress after label so they sit side by side*/
+    padding: 10px;
+    margin-left: 0.5rem;
+    max-width: 100%;
+}   
+
+footer p ~ p { /* They are subsequent siblings where the paragraph after the first is the one that is targeted so it is separate from copyright section*/
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+/* Attribute Selector */
+a[href$=".pdf"] { /* Targets any link that has an href which ends in .pdf (this is mainly used for my resume to be downloaded) */
+    color: var(--color-text);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Layout and Responsiveness  */
+
+/*Mainly for experiments page so that it won't scroll sideways*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+audio {
+    max-width: 100%;
+    height: auto;
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+iframe {
+    max-width: 100%;
+}
+
 /* Hover Section */
+a:hover {
+    text-decoration: underline;
+    background-color: var(--color-button);
+    border-radius: var(--border-rad);
+}
+
 nav li a:hover{
     text-decoration: underline;
     background-color: var(--color-bg);
@@ -138,5 +213,7 @@ button:focus {
 /* From hardware.html and software.html*/
 project-card {
     display: block;
-    border: 1px solid black;
+    border: 1rem var(--color-text);
+    border-style: solid;
+    padding: var(--padding);
 }
