@@ -1,0 +1,142 @@
+/* Custom Properties on Root */
+
+:root {
+    /* Colors */
+    --color-bg: rgb(253, 194, 146); /* softer background */
+    --color-blocks: rgb(255, 141, 76);
+    --color-text: rgb(92, 42, 9);
+    --color-button: rgb(255, 107, 21);
+    --color-button-border: rgb(240, 97, 2);
+
+    /* Font Stack */
+    --font-all: "Times New Roman", Times, serif;
+    --font18: 18px;
+
+    /* Layout Value */
+    --max-width: 1500px;
+    --padding: 15px;
+    --border-rad: 25px;
+}
+
+/* Body Styles */
+body {
+    /* Typography and Inheritance Section */
+    background-color: var(--color-bg);
+    font-family: var(--font-all);
+    color: var(--color-text);
+    line-height: 1.6;
+
+    /* Layout and Box Model */
+    max-width: var(--max-width);
+    margin: 0 auto; /* 0's at the top and bottom and centers page */
+    padding: var(--padding);
+}
+
+/* Navigation */
+h1 {
+    color: var(--color-text);
+}
+
+nav {
+    background-color: var(--color-blocks);
+    border-radius: var(--padding);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: var(--padding); /* Padding to the left and right*/
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav li {
+    background-color: var(--color-button);
+    display: flex;
+    justify-content: center;
+
+    /* Border */
+    border: var(--color-button-border);
+    border-radius: var(--border-rad);
+    border-style: solid;
+}
+nav li a {
+    font-size: var(--font18);
+    color: var(--color-text);
+    text-decoration-line: none;
+    font-weight: bold;
+
+    margin: 0;
+    padding: 10px 50px;
+    
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    background-color: var(--color-blocks);
+    border-radius: var(--border-rad);
+}
+
+footer p {
+    font-size: var(--font18);
+    color: var(--color-text);
+    text-decoration-line: none;
+    font-weight: bold;
+
+    text-align: center;
+
+    padding: 5px;
+}
+
+footer a {
+    font-size: var(--font18);
+    color: var(--color-text);
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+}
+
+/* Hover Section */
+nav li a:hover{
+    text-decoration: underline;
+    background-color: var(--color-bg);
+    border-radius: var(--border-rad);
+}
+
+footer a:hover {
+    text-decoration: underline;
+    background-color: var(--color-bg);
+    border-radius: var(--border-rad);
+}
+
+/* Focus Section */
+a:focus {
+    color: var(--color-text);
+    outline: 3px;
+    outline-style: solid;
+}
+
+input:focus {
+    color: var(--color-text);
+    outline: 3px;
+    outline-style: solid;
+}
+
+button:focus {
+    color: var(--color-text);
+    outline: 3px;
+    outline-style: solid;
+}
+
+/* From hardware.html and software.html*/
+project-card {
+    display: block;
+    border: 1px solid black;
+}
